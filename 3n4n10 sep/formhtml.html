@@ -4,8 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form HTML</title>
+    <style>
+        body{
+            background-color: #a6808c;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .form input[type="text"],.form input[type="password"]{
+            background: black;
+            color: white;
+            border: 1px solid gray;
+        }
+        select{
+            background-color: black;
+            color: white;
+        }
+        textarea{
+            background-color: black;
+            color: white;
+        }
+        .form {
+            border: 3px solid #222;
+            border-radius: 15px;
+            padding: 32px 40px;
+            background: rgba(0,0,0,0.2);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+        }
+        
+    </style>
 </head>
 <body>
+    <div class="form">
+        <h2>REGISTRATION FORM</h2>
         <form action="/action.php">
             <label>Name
                 <input type="text" placeholder="Enter Your Name">
@@ -34,10 +67,44 @@
                 <input type="radio" name="course" id="bca" value="bca">
                 <label for="bca">B.C.A.</label>
             </div>
+            
+            <h3>Select Programming Language</h3>
+            <div> 
+                <input type="checkbox" value="Programming" id="c">
+                <label for="c">C</label>
+            </div>
+            <div> 
+                <input type="checkbox" value="Programming" id="c++">
+                <label for="c++">C++</label>
+            </div>
+            <div> 
+                <input type="checkbox" value="Programming" id="python">
+                <label for="python">Python</label>
+            </div>
+            <div> 
+                <input type="checkbox" value="Programming" id="java">
+                <label for="java">Java</label>
+            </div>
+            <br>
+            <div>
+                <select name="city">
+                    <option value="delhi">Delhi</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="lucknow">lucknow</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <textarea name="message" placeholder="ENTER YOUR MESSAGE" rows="10" cols="40"></textarea>
+            </div>
             <BR></BR>
+            <DIV>
+                
+            </DIV>
             <div>
                 <input type="SUBMIT">
             </div>
         </form>
+    </div>
 </body>
 </html>
