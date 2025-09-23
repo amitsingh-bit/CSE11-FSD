@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>faltu form</title>
+</head>
+<body>
+    
+    <form action="/action.php">
+        <h1><center>Contact Us</center></h1>
+        <div>
+            <label >First Name:
+                <input type="text" placeholder="ENTER FIRST NAME">
+            </label>
+        </div>
+        <div>
+            <label >Last Name:
+                <input type="text" placeholder="ENTER LAST NAME">
+            </label>
+        </div>
+        <br>
+        <div>
+            <label>Email:
+                <input type="email" placeholder="ENTER EMAIL ADDRESS">
+            </label>
+        </div>
+        <br>
+        <div>
+            <label>Phone Number:
+                <input type="tel" placeholder="ENTER PHONE NUMBER">
+            </label>
+        </div>
+        <BR>
+        <DIV>
+            <label>Inquiry details:
+                <input type="text" placeholder="ENTER THE INQUIRY DETAILS">
+            </label>
+        </DIV>
+        <BR>
+        <DIV>
+            <label>Subject Line:
+                <input type="text" placeholder="ENTER SUBJECT LINE">
+            </label>
+        </DIV>
+        <BR>
+        <DIV>
+            <label>Message:
+                <textarea name="message" placeholder="ENTER THE MESSAGE" rows="10" cols="40"></textarea>
+            </label>
+        </DIV>
+        <br>
+        <div>
+            <label>Category:
+                <input type="radio" name="category" id="gen" value="gen" required>
+                <label for="gen">General</label>
+                <input type="radio" name="category" id="billing" value="billing" required>
+                <label for="billing">Billing</label>
+                <input type="radio" name="category" id="tech" value="tech" required>
+                <label for="tech">Technical</label>
+            </label>
+        </div>
+        <br>
+        <div>
+            <label>Department:
+                <select name="Department">
+                    <option value="delhi">Sales</option>
+                    <option value="mumbai">Cashier</option>
+                    <option value="lucknow">Others</option>
+                </select>
+            </label>
+        </div>
+        <br>
+        <div>
+            <input type="submit">
+        </div>
+        
+    </form>
+</body>
+</html>

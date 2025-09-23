@@ -1,0 +1,21 @@
+body{
+  background-color: blue;
+}
+#box{
+  color: red;
+}
+#two{
+  color: blue;
+}
+#three{
+  color: green;
+}
+.grp1{
+  color: red;
+}
+.grp2{
+  color: orange;
+}
+.grp3{
+  color: brown;
+}
