@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        .cart-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 32px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        .cart-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        .cart-table td {
+            padding: 20px 15px;
+            border-bottom: 1px solid #e0e0e0;
+            color: #333;
+        }
+        .cart-table tr:hover {
+            background: #f8f9fa;
+        }
+        .book-cover {
+            width: 60px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        .book-details {
+            font-size: 14px;
+        }
+        .book-title {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        .book-author {
+            color: #555;
+            margin-bottom: 3px;
+        }
+        .book-publisher {
+            color: #888;
+            font-style: italic;
+        }
+        .quantity-input {
+            width: 60px;
+            padding: 8px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .quantity-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .remove-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        .remove-btn:hover {
+            background: #c82333;
+            transform: translateY(-2px);
+        }
+        .cart-summary {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 2px solid #e0e0e0;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #333;
+        }
+        .summary-row.total {
+            border-top: 2px solid #667eea;
+            margin-top: 10px;
+            padding-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .cart-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            gap: 15px;
+        }
+        .btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-continue {
+            background: #6c757d;
+            color: white;
+        }
+        .btn-continue:hover {
+            background: #5a6268;
+        }
+        .btn-checkout {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .btn-checkout:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        .empty-cart {
+            text-align: center;
+            padding: 60px 20px;
+            color: #888;
+        }
+        .empty-cart-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cart-container">
+        <h1>🛒 Shopping Cart</h1>
+        
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Cover</th>
+                    <th>Book Details</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="book-cover">📖</div>
+                    </td>
+                    <td>
+                        <div class="book-details">
+                            <div class="book-title">XML Bible</div>
+                            <div class="book-author">Author: Winston</div>
+                            <div class="book-publisher">Publication: Wiley</div>
+                        </div>
+                    </td>
+                    <td>
+                        <input type="number" class="quantity-input" value="1" min="1" max="10">
+                    </td>
+                    <td>
+                        <div class="price">$40.50</div>
+                    </td>
+                    <td>
+                        <div class="price">$40.50</div>
+                    </td>
+                    <td>
+                        <button class="remove-btn" onclick="removeItem(this)">Remove</button>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <div class="book-cover">🤖</div>
+                    </td>
+                    <td>
+                        <div class="book-details">
+                            <div class="book-title">Artificial Intelligence</div>
+                            <div class="book-author">Author: S. Russell</div>
+                            <div class="book-publisher">Publication: Prentice Hall</div>
+                        </div>
+                    </td>
+                    <td>
+                        <input type="number" class="quantity-input" value="2" min="1" max="10">
+                    </td>
+                    <td>
+                        <div class="price">$63.00</div>
+                    </td>
+                    <td>
+                        <div class="price">$126.00</div>
+                    </td>
+                    <td>
+                        <button class="remove-btn" onclick="removeItem(this)">Remove</button>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <div class="book-cover">☕</div>
+                    </td>
+                    <td>
+                        <div class="book-details">
+                            <div class="book-title">Java 2</div>
+                            <div class="book-author">Author: Watson</div>
+                            <div class="book-publisher">Publication: BPB Publications</div>
+                        </div>
+                    </td>
+                    <td>
+                        <input type="number" class="quantity-input" value="1" min="1" max="10">
+                    </td>
+                    <td>
+                        <div class="price">$35.50</div>
+                    </td>
+                    <td>
+                        <div class="price">$35.50</div>
+                    </td>
+                    <td>
+                        <button class="remove-btn" onclick="removeItem(this)">Remove</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>Subtotal:</span>
+                <span>$202.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping:</span>
+                <span>$10.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Tax (10%):</span>
+                <span>$20.20</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total:</span>
+                <span>$232.20</span>
+            </div>
+        </div>
+        
+        <div class="cart-actions">
+            <button class="btn btn-continue" onclick="continueShopping()">Continue Shopping</button>
+            <button class="btn btn-checkout" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

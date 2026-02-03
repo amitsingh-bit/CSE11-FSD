@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Book Store</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+        #top {
+            background: #f3e5d8;
+            padding: 15px;
+            text-align: left;
+            border-bottom: 2px solid #c7b39e;
+        }
+        #brand {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        #brand h1 {
+            margin: 0;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+        }
+        #brand .subtitle {
+            margin: 0;
+            font-size: 1rem;
+            color: #333;
+            font-weight: normal;
+        }
+        #top a {
+            margin-right: 20px;
+            font-weight: bold;
+            color: black;
+            text-decoration: none;
+        }
+        #container {
+            display: flex;
+            height: 85vh;
+        }
+        #left {
+            width: 20%;
+            border-right: 2px solid #ccc;
+            padding: 10px;
+        }
+        #left table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        #left td, #left th {
+            border: 1px solid #000;
+            padding: 8px;
+        }
+        #left a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #right {
+            width: 80%;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="top">
+        <div id="brand">
+            <h1>ABES Engineering College</h1>
+            <div class="subtitle">Online Book Store</div>
+        </div>
+        <div id="top-links">
+            <a href="#home" onclick="loadPage('home')">Home</a>
+            <a href="#login" onclick="loadPage('login')">Login</a>
+            <a href="#register" onclick="loadPage('register')">Registration</a>
+            <a href="#catalogue" onclick="loadPage('catalogue')">Catalogue</a>
+            <a href="#cart" onclick="loadPage('cart')">Cart</a>
+        </div>
+    </div>
+
+    <div id="container">
+
+        <div id="left">
+            <table>
+                <tr><th>Categories</th></tr>
+                <tr><td><a href="#" onclick="loadPage('cse')">CSE</a></td></tr>
+                <tr><td><a href="#" onclick="loadPage('ece')">ECE</a></td></tr>
+                <tr><td><a href="#" onclick="loadPage('eee')">EEE</a></td></tr>
+                <tr><td><a href="#" onclick="loadPage('civil')">CIVIL</a></td></tr>
+            </table>
+        </div>
+
+        <iframe id="right"></iframe>
+
+    </div>
+
+    <script>
+        const pages = {
+            home: `
+                <h2>Welcome to the Online Book Store</h2>
+                <p>This website allows students to browse books by department,
+                register, login and add books to the shopping cart.</p>
+            `,
+            login: `
+                <h2>Login Page</h2>
+                <form>
+                    Username: <input type="text"><br><br>
+                    Password: <input type="password"><br><br>
+                    <button>Login</button>
+                </form>
+            `,
+            register: `
+                <h2>Registration Page</h2>
+                <form>
+                    Name: <input type="text"><br><br>
+                    Email: <input type="email"><br><br>
+                    Password: <input type="password"><br><br>
+                    <button>Register</button>
+                </form>
+            `,
+            catalogue: `
+                <h2>Book Catalogue</h2>
+                <ul>
+                    <li>Data Structures – ₹350</li>
+                    <li>Operating Systems – ₹400</li>
+                    <li>DBMS – ₹300</li>
+                </ul>
+            `,
+            cart: `
+                <h2>Your Cart</h2>
+                <p>No items added yet.</p>
+            `,
+            cse: `
+                <h2>CSE Books</h2>
+                <ul>
+                    <li>Data Structures – ₹350</li>
+                    <li>Computer Networks – ₹420</li>
+                    <li>OOP in C++ – ₹300</li>
+                </ul>
+            `,
+            ece: `
+                <h2>ECE Books</h2>
+                <ul>
+                    <li>Digital Electronics – ₹380</li>
+                    <li>Signals & Systems – ₹450</li>
+                </ul>
+            `,
+            eee: `
+                <h2>EEE Books</h2>
+                <ul>
+                    <li>Basic Electrical Engineering – ₹300</li>
+                    <li>Power Systems – ₹480</li>
+                </ul>
+            `,
+            civil: `
+                <h2>CIVIL Books</h2>
+                <ul>
+                    <li>Engineering Mechanics – ₹350</li>
+                    <li>Structural Analysis – ₹500</li>
+                </ul>
+            `
+        };
+
+        document.getElementById("right").srcdoc = pages.home;
+
+        function loadPage(page) {
+            document.getElementById("right").srcdoc = pages[page];
+        }
+    </script>
+
+</body>
+</html>

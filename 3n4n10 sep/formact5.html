@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <style>
+    * {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #f2f5f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: #fff;
+  padding: 25px 35px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 400px;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 15px;
+  font-weight: 600;
+  color: #444;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+  margin-top: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.radio-group, .checkbox-group, .dob-group {
+  margin-top: 5px;
+}
+
+.radio-group label,
+.checkbox-group label {
+  margin-right: 10px;
+  font-weight: 400;
+}
+
+.dob-group select {
+  width: 32%;
+  margin-right: 2%;
+}
+
+input[type="submit"] {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Registration Form</h2>
+    <form action="#" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="email">E-mail ID:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="1234567890" required>
+
+      <label>Sex:</label>
+      <div class="radio-group">
+        <label><input type="radio" name="gender" value="male" required> Male</label>
+        <label><input type="radio" name="gender" value="female"> Female</label>
+        <label><input type="radio" name="gender" value="other"> Other</label>
+      </div>
+
+      <label>Date of Birth:</label>
+      <div class="dob-group">
+        <select name="day" required>
+          <option value="">Day</option>
+          <script>
+            for (let i = 1; i <= 31; i++) {
+              document.write(`<option value="${i}">${i}</option>`);
+            }
+          </script>
+        </select>
+
+        <select name="month" required>
+          <option value="">Month</option>
+          <option>January</option>
+          <option>February</option>
+          <option>March</option>
+          <option>April</option>
+          <option>May</option>
+          <option>June</option>
+          <option>July</option>
+          <option>August</option>
+          <option>September</option>
+          <option>October</option>
+          <option>November</option>
+          <option>December</option>
+        </select>
+
+        <select name="year" required>
+          <option value="">Year</option>
+          <script>
+            for (let y = 2025; y >= 1950; y--) {
+              document.write(`<option value="${y}">${y}</option>`);
+            }
+          </script>
+        </select>
+      </div>
+
+      <label>Languages Known:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="languages" value="English"> English</label>
+        <label><input type="checkbox" name="languages" value="Telugu"> Telugu</label>
+        <label><input type="checkbox" name="languages" value="Hindi"> Hindi</label>
+        <label><input type="checkbox" name="languages" value="Tamil"> Tamil</label>
+      </div>
+
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" rows="4" required></textarea>
+
+      <input type="submit" value="Register">
+    </form>
+  </div>
+</body>
+</html>

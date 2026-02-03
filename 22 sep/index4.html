@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            gap: 40px;
+        }
+        .left, .right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 700px;
+            width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+        }
+        .left {
+            background-color: aqua;
+        }
+        .right {
+            background-color: orange;
+        }
+        .form {
+            width: 100%;
+            max-width: 320px;
+            max-height: 600px;
+            overflow-y: auto;
+            background: rgba(255,255,255,0.85);
+            padding: 24px 18px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        .form h2, .form h3 {
+            margin-top: 0;
+            text-align: center;
+        }
+        .form input[type="text"],
+        .form input[type="password"],
+        .form select,
+        .form textarea {
+            width: 100%;
+            margin: 6px 0 14px 0;
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #bbb;
+            box-sizing: border-box;
+        }
+        .form input[type="radio"],
+        .form input[type="checkbox"] {
+            margin-right: 6px;
+        }
+        .form label {
+            display: block;
+            margin-bottom: 4px;
+        }
+        .form input[type="SUBMIT"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+            background: #ff9800;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="left"></div>
+    <div class="right">
+        <div class="form">
+        <h2>CONTACT FORM</h2>
+        <form action="/action.php">
+            <label>Name
+                <input type="text" placeholder="Enter Your Name">
+            </label>
+            <br><br>
+            <div>
+            COURSE:
+            <div>
+                <input type="radio" name="course" id="btech" value="btech" required>
+                <label for="btech">B.Tech</label>
+            </div>
+            
+            <div>
+                <input type="radio" name="course" id="mtech" value="mtech" required>
+                <label for="mtech">M.Tech</label>
+            </div>
+            <div>
+                <input type="radio" name="course" id="mba" value="mba">
+                <label for="mba">M.B.A.</label>
+            </div>
+            <div>
+                <input type="radio" name="course" id="bca" value="bca">
+                <label for="bca">B.C.A.</label>
+            </div>
+            
+            <h3>Select Programming Language</h3>
+            <div> 
+                <input type="checkbox" value="Programming" id="c">
+                <label for="c">C</label>
+            </div>
+            <div> 
+                <input type="checkbox" value="Programming" id="c++">
+                <label for="c++">C++</label>
+            </div>
+            <div> 
+                <input type="checkbox" value="Programming" id="python">
+                <label for="python">Python</label>
+            </div>
+            <div> 
+                <input type="checkbox" value="Programming" id="java">
+                <label for="java">Java</label>
+            </div>
+            <br>
+            <div>
+                <textarea name="message" placeholder="ENTER YOUR MESSAGE" rows="10" cols="40"></textarea>
+            </div>
+            <div>
+                <input type="SUBMIT">
+            </div>
+        </form>
+    </div>
+    </div>
+    
+  </div>
+</body>
+</html>
